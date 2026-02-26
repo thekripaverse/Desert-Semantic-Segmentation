@@ -203,6 +203,44 @@ pytest tests/
 
 ---
 
+## Target Market & Applications
+
+This system is designed for real-world deployment in:
+
+- Autonomous desert navigation (defense & robotics)
+- Mining automation in arid terrains
+- Agricultural robotics in dry regions
+- Digital twin simulation environments
+- Remote terrain monitoring systems
+
+The global autonomous off-road vehicle market is expanding rapidly, particularly in mining and defense sectors where structured urban datasets are not applicable.
+
+This segmentation pipeline can serve as a perception module within autonomous stacks operating in desert and semi-arid environments.
+
+
+## Scalability
+
+The architecture is modular and supports:
+
+- Backbone upgrades (ResNet-34 / ResNet-50)
+- Multi-scale training
+- Domain adaptation techniques
+- Transfer learning to other terrain types
+
+The system is not limited to desert terrain and can generalize to forest, agricultural, and mining landscapes with retraining.
+
+
+## Deployment Strategy
+
+The segmentation model can be deployed:
+
+- On edge devices using TorchScript
+- Integrated into ROS-based robotics stacks
+- Wrapped in REST APIs for monitoring systems
+- Used as a perception module in autonomous vehicles
+
+
+
 ## Future Work
 
 - Multi-scale training
