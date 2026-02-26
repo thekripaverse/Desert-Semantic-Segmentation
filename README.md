@@ -37,32 +37,40 @@ Any use of designated testing images for training purposes is strictly prohibite
 
 ## Model Details
 
+Model : https://drive.google.com/file/d/16wuMMTJE-5g-sWX-uvDCfB-NixFuAwEg/view?usp=drive_link
 Architecture: U-Net  
 Encoder Backbone: ResNet-18  
 Pretrained Weights: ImageNet  
 Number of Classes: 10  
-Input Resolution: 256 × 256  
+Input Resolution: 256 × 256
 
 Loss Function:
+
 - Weighted Cross Entropy Loss
 - Dice Loss (combined with Cross Entropy)
 
 Optimizer:
+
 - Adam
 
 Learning Rate:
+
 - 1e-3
 
 Scheduler:
+
 - ReduceLROnPlateau
 
 Batch Size:
+
 - 8 (GPU training)
 
 Epochs:
+
 - 30
 
 Inference Enhancement:
+
 - Test-Time Augmentation (Horizontal Flip)
 
 ---
@@ -79,8 +87,8 @@ conda activate desert_seg
 Or using venv:
 
 python -m venv venv
-source venv/bin/activate   (Linux/Mac)
-venv\Scripts\activate      (Windows)
+source venv/bin/activate (Linux/Mac)
+venv\Scripts\activate (Windows)
 
 ---
 
@@ -104,6 +112,7 @@ To train the model:
 python train.py
 
 Training will:
+
 - Load training and validation datasets
 - Apply data augmentation
 - Train for 30 epochs
@@ -122,6 +131,7 @@ To evaluate the trained model:
 python test.py --weights best_model_final_0.5402.pth
 
 This script will:
+
 - Load trained weights
 - Run inference on validation/test dataset
 - Apply Test-Time Augmentation
@@ -138,6 +148,7 @@ Hyperparameters can be modified inside:
 config.yaml
 
 This includes:
+
 - Learning rate
 - Batch size
 - Number of epochs
@@ -171,12 +182,12 @@ To reproduce results exactly:
 2. Maintain folder structure:
 
 train/
-    Color_Images/
-    Segmentation/
+Color_Images/
+Segmentation/
 
 val/
-    Color_Images/
-    Segmentation/
+Color_Images/
+Segmentation/
 
 3. Use identical hyperparameters from config.yaml.
 4. Run inference with Test-Time Augmentation enabled.
@@ -190,10 +201,12 @@ GPU training is recommended for faster convergence.
 After running test.py:
 
 Console Output:
+
 - Validation Loss
 - Validation mIoU
 
 Optional Output:
+
 - Saved segmentation masks in output folder
 
 ---
@@ -226,9 +239,8 @@ All workflows strictly maintained separation between training, validation, and t
 ## Author
 
 Hack for Green Bharat 2026
-Team Name: TechGoofies 
+Team Name: TechGoofies
 Team Members:
 Kripasree M
 Madhu Rithika R K
 Raj Moorthy B
-  
