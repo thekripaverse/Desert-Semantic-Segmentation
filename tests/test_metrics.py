@@ -1,5 +1,5 @@
 import torch
-from src.utils.metrics import compute_iou
+from src.desert_segmentation.utils.metrics import compute_iou
 
 
 def test_compute_iou_perfect_match():
