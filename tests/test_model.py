@@ -1,5 +1,5 @@
 import torch
-from src.models.unet import build_unet
+from src.desert_segmentation.models.unet import UNet
 
 
 def test_model_output_shape():
