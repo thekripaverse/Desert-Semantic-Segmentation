@@ -92,7 +92,6 @@ The model was evaluated on a held-out validation set of synthetic desert terrain
 
 ### Visualizing Segmentation
 
-_(Tip: Once you run inference, save a comparison image to `docs/results_sample.png` and link it here)_
 ![Inference Sample](docs/Architecture.png)
 _Current visualization shows the U-Net architecture utilized for these results._
 
