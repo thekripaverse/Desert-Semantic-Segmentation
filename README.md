@@ -202,6 +202,15 @@ These reduce execution risk associated with synthetic-only training.
 
 # Demo UI
 
+<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/aaa7632d-2f8d-4fb6-8552-bcae6f381199" />
+
+<img width="1600" height="804" alt="image" src="https://github.com/user-attachments/assets/837487c5-9bc9-4052-8a55-f75bb6a75c0d" />
+
+<img width="1600" height="755" alt="image" src="https://github.com/user-attachments/assets/469a1222-aa99-4c62-a86a-7d407181e168" />
+
+<img width="1600" height="812" alt="image" src="https://github.com/user-attachments/assets/a0aa3204-b1a6-4f1e-a6d5-5e092743deec" />
+
+
 A Streamlit-based interactive demo is included.
 
 Run locally:
