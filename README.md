@@ -12,14 +12,15 @@ Final Validation mIoU (with Test-Time Augmentation): **0.5402**
 
 ## Project Structure
 
-Final_Submission/
-│
+```
+Desert-Semantic-Segmentation/
 ├── train.py                          # Model training script
 ├── test.py                           # Inference and evaluation script
 ├── config.yaml                       # Hyperparameter configuration
 ├── best_model_final_0.5402.pth       # Trained model weights
 ├── requirements.txt                  # Required dependencies
 └── README.md                         # Documentation
+```
 
 ---
 
