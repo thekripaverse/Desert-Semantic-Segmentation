@@ -72,20 +72,29 @@ The model uses a U-Net decoder with skip connections and a ResNet-18 encoder bac
 - Upsampling decoder with skip concatenation
 - Final 1×1 convolution for 10-class prediction
 
-Architecture Diagram:
+## Results & Evaluation
 
-![Architecture](docs/architecture.png)
+The model was evaluated on a held-out validation set of synthetic desert terrain. The inclusion of **Test-Time Augmentation (TTA)** and a **Hybrid Loss function** were key to handling rare classes and texture similarities.
 
----
+### Performance Metrics
 
-## Results
+| Metric              | Score      | Note                                       |
+| :------------------ | :--------- | :----------------------------------------- |
+| **Validation mIoU** | 0.5313     | Base model performance                     |
+| **Final TTA mIoU**  | **0.5402** | +0.9% boost from Horizontal Flip averaging |
+| **Training Status** | Converged  | Stable at 30 epochs                        |
 
-| Metric          | Score      |
-| --------------- | ---------- |
-| Validation mIoU | 0.5313     |
-| Final TTA mIoU  | **0.5402** |
-| Epochs          | 30         |
-| Backbone        | ResNet-18  |
+### Class-Wise Insights
+
+- **High Performance:** Landscape and Sky classes achieved the highest IoU due to large spatial consistency.
+- **Rare Class Stability:** Hybrid Loss (Dice + Weighted CE) improved detection for underrepresented classes like Flowers and Logs.
+- **Inference Robustness:** TTA effectively reduced boundary noise and edge inconsistencies.
+
+### Visualizing Segmentation
+
+_(Tip: Once you run inference, save a comparison image to `docs/results_sample.png` and link it here)_
+![Inference Sample](docs/Architecture.png)
+_Current visualization shows the U-Net architecture utilized for these results._
 
 ### Observations
 
