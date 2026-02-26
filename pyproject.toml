@@ -1,7 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "desert-segmentation"
 version = "0.1.0"
-description = "Semantic segmentation for desert terrain"
+description = "Terrain-aware semantic segmentation using synthetic data"
+authors = [{name="Kripa"}]
+requires-python = ">=3.9"
 
-[tool.black]
-line-length = 88
+[tool.setuptools]
+package-dir = {"" = "src"}
