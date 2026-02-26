@@ -147,6 +147,13 @@ python -m src.desert_segmentation.train \
 python -m src.desert_segmentation.test
 ```
 
+## Demo UI
+
+Run locally:
+
+pip install streamlit
+streamlit run apps/streamlit_app.py
+
 This will:
 
 - Load best model weights
