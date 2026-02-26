@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.9+-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![CI](https://github.com/thekripaverse/Desert-Semantic-Segmentation/actions/workflows/ci.yml/badge.svg)
 
 Robust terrain-aware semantic segmentation using synthetic digital twin data.
 
