@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "R K"
+    given-names: "Madhu Rithika"
+  - family-names: "M"
+    given-names: "Kripasree"
+  - family-names: "B"
+    given-names: "Raj Moorthy"
+title: "DesertVision: Robust Semantic Segmentation for Digital Twin Desert Environments"
+version: 0.1.0
+date-released: 2026-02-26
