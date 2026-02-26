@@ -224,6 +224,26 @@ Industries actively operating in such environments include:
 These sectors require reliable terrain segmentation models that generalize beyond structured urban datasets.
 
 ---
+## Business Model & Revenue Strategy
+
+Primary customers:
+- Autonomous mining companies
+- Defense robotics contractors
+- Agri-robotics manufacturers
+- Digital twin simulation platforms
+
+Revenue Model:
+- B2B licensing of terrain perception module
+- Custom dataset adaptation services
+- On-premise deployment contracts
+- Simulation-to-real transfer consulting
+
+Market Opportunity:
+Autonomous off-road vehicle and robotics sectors are expanding rapidly, particularly in mining and defense industries operating in unstructured terrains.
+
+This segmentation system functions as a reusable perception backbone adaptable to multiple terrain-focused verticals.
+
+---
 
 ## Value Proposition
 
