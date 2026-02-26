@@ -1,0 +1,7 @@
+[project]
+name = "desert-segmentation"
+version = "0.1.0"
+description = "Semantic segmentation for desert terrain"
+
+[tool.black]
+line-length = 88
