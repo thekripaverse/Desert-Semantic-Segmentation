@@ -318,6 +318,19 @@ Future validation will include:
 
 ---
 
+## Deployment Readiness
+
+The model can be deployed via:
+
+- TorchScript for edge devices
+- ONNX export for cross-platform inference
+- REST API wrapper for monitoring systems
+- Streamlit-based demo UI for evaluation
+
+The modular architecture supports integration into robotics autonomy stacks and simulation pipelines.
+
+---
+
 ## License
 
 This project is licensed under the MIT License.
