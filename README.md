@@ -38,6 +38,7 @@ Any use of designated testing images for training purposes is strictly prohibite
 ## Model Details
 
 Model : https://drive.google.com/file/d/16wuMMTJE-5g-sWX-uvDCfB-NixFuAwEg/view?usp=drive_link
+
 Architecture: U-Net  
 Encoder Backbone: ResNet-18  
 Pretrained Weights: ImageNet  
