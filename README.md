@@ -1,5 +1,9 @@
 # Desert Semantic Segmentation – Hack for Green Bharat
 
+![Python](https://img.shields.io/badge/python-3.9-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0-red)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 ## Overview
 
 This project presents a semantic segmentation model trained exclusively on the synthetic desert dataset provided as part of the Hack for Green Bharat challenge.
@@ -161,6 +165,13 @@ This includes:
 ## Performance Summary
 
 Final Validation mIoU: 0.5402
+
+| Metric | Score |
+|--------|-------|
+| Validation mIoU | 0.5402 |
+| Epochs | 30 |
+| Backbone | ResNet-18 |
+
 
 Performance Improvements Applied:
 
