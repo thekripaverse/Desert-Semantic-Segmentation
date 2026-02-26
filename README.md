@@ -203,51 +203,98 @@ pytest tests/
 
 ---
 
-## Target Market & Applications
+## Market Landscape & Strategic Positioning
 
-This system is designed for real-world deployment in:
+### Industry Context
 
-- Autonomous desert navigation (defense & robotics)
-- Mining automation in arid terrains
-- Agricultural robotics in dry regions
+Autonomous systems operating in off-road and desert environments face significant perception challenges due to:
+
+- Sparse structural features
+- Texture similarity between terrain elements
+- Limited availability of annotated real-world datasets
+
+Industries actively operating in such environments include:
+
+- Autonomous mining and excavation systems
+- Defense-grade unmanned ground vehicles (UGVs)
+- Agricultural robotics in arid regions
+- Infrastructure inspection in remote terrain
 - Digital twin simulation environments
+
+These sectors require reliable terrain segmentation models that generalize beyond structured urban datasets.
+
+---
+
+## Value Proposition
+
+This project demonstrates a synthetic-first training strategy capable of achieving competitive segmentation performance (mIoU: 0.5402) without reliance on expensive real-world labeling.
+
+Key advantages:
+
+- Reduced data acquisition cost
+- Faster iteration cycles using simulation
+- Controlled environment training for rare terrain cases
+- Modular architecture ready for domain adaptation
+
+The system serves as a perception module that can integrate into:
+
+- Robotics autonomy stacks
+- Simulation-to-real transfer pipelines
+- Edge deployment environments
 - Remote terrain monitoring systems
 
-The global autonomous off-road vehicle market is expanding rapidly, particularly in mining and defense sectors where structured urban datasets are not applicable.
+---
 
-This segmentation pipeline can serve as a perception module within autonomous stacks operating in desert and semi-arid environments.
+## Scalability & Expansion Strategy
 
+Although evaluated on desert terrain, the architecture is intentionally modular and supports expansion to:
 
-## Scalability
+- Forest and agricultural segmentation
+- Industrial site monitoring
+- Construction and mining automation
+- Multi-terrain domain adaptation
 
-The architecture is modular and supports:
+Scalability mechanisms include:
 
-- Backbone upgrades (ResNet-34 / ResNet-50)
+- Backbone upgrades (ResNet-34, ResNet-50)
 - Multi-scale training
 - Domain adaptation techniques
-- Transfer learning to other terrain types
+- Semi-supervised fine-tuning on real-world samples
+- Edge-device optimization via TorchScript
 
-The system is not limited to desert terrain and can generalize to forest, agricultural, and mining landscapes with retraining.
+The model is not constrained to a single niche; it represents a reusable segmentation backbone adaptable across terrain-dependent industries.
 
+---
 
-## Deployment Strategy
+## Execution Risk Mitigation
 
-The segmentation model can be deployed:
+Concern: Reliance on synthetic data.
 
-- On edge devices using TorchScript
-- Integrated into ROS-based robotics stacks
-- Wrapped in REST APIs for monitoring systems
-- Used as a perception module in autonomous vehicles
+Mitigation Strategy:
 
+- Fine-tuning on small real-world samples
+- Domain randomization during simulation
+- Test-Time Augmentation for robustness
+- Hybrid loss optimization for boundary stability
 
+This reduces sim-to-real transfer risk while preserving training efficiency.
 
-## Future Work
+---
 
-- Multi-scale training
-- Deeper encoder backbone (ResNet-34 / ResNet-50)
-- Domain adaptation techniques
-- Semi-supervised fine-tuning
-- Boundary-aware loss refinement
+## Success Metrics
+
+The project evaluates success through:
+
+- Mean Intersection over Union (mIoU)
+- Rare-class boundary consistency
+- Inference stability under augmentation
+- Reproducibility via modular training pipeline
+
+Future validation will include:
+
+- Cross-domain testing
+- Edge inference benchmarking
+- Real-world dataset adaptation
 
 ---
 
