@@ -259,6 +259,3 @@ Unit tests validate:
 
 MIT License
 
-```
-
----
