@@ -1,0 +1,18 @@
+model:
+  architecture: Unet
+  encoder: resnet18
+  pretrained: imagenet
+  num_classes: 10
+  input_size: 256
+
+training:
+  batch_size: 8
+  epochs: 30
+  optimizer: Adam
+  learning_rate: 0.001
+  loss: 0.5 CrossEntropy + 0.5 Dice
+  scheduler: ReduceLROnPlateau
+
+inference:
+  tta: horizontal_flip
+  final_validation_mIoU: 0.5402
