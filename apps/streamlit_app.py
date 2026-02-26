@@ -4,7 +4,12 @@ import numpy as np
 import cv2
 from PIL import Image
 from pathlib import Path
+import sys
+from pathlib import Path
 
+# Add project root to Python path
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT))
 # Import your model builder
 from src.desert_segmentation.models.unet import build_unet
 
@@ -52,7 +57,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🏜️ Desert Semantic Segmentation")
+st.title("Desert Semantic Segmentation")
 st.markdown("Upload a desert terrain image to generate segmentation mask.")
 
 # -------------------------
