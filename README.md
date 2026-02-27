@@ -9,9 +9,9 @@ Production-oriented terrain-aware semantic segmentation system trained using syn
 
 ---
 
-# Executive Summary
+## Overview
 
-This project presents a modular deep learning segmentation pipeline designed to generalize across low-structure desert terrains using a synthetic-first training strategy.
+This project implements a modular U-Net based segmentation pipeline optimized for low-structure desert terrains.
 
 The system emphasizes:
 
@@ -22,40 +22,107 @@ The system emphasizes:
 
 Final Validation mIoU (with TTA): **0.5402**
 
-Architected as a reusable perception backbone, the system is adaptable for robotics autonomy stacks, digital twin simulation environments, and industrial terrain monitoring.
+---
+
+## Table of Contents
+
+* Quick Start
+* Installation
+* Usage
+* Demo UI
+* Technical Architecture
+* Performance Evaluation
+* Dataset Strategy
+* Deployment & Scalability
+* Testing
+* Market Landscape
+* Competitive Positioning
+* Business Model
+* Risk Mitigation
+* Future Work
+* License
 
 ---
 
-# Problem Definition
+## Quick Start
 
-Autonomous systems operating in unstructured terrains encounter critical perception challenges:
+```bash
+git clone https://github.com/thekripaverse/Desert-Semantic-Segmentation.git
+cd Desert-Semantic-Segmentation
+pip install -r requirements.txt
+python -m src.desert_segmentation.train
+```
 
-* Irregular object boundaries
-* High texture similarity between terrain classes
-* Limited annotated real-world datasets
-* Illumination variability
-* Simulation-to-real domain shift
+Run evaluation:
 
-Models trained on structured urban datasets often fail under these conditions.
-
-This project investigates a synthetic-first approach to reduce labeling cost while preserving real-world robustness.
-
-
----
-
-## Innovation Highlights
-
-- Synthetic-first training pipeline for low-structure terrain environments
-- Hybrid loss design for rare-class boundary stabilization
-- Test-Time Augmentation for inference robustness without increasing model size
-- Modular architecture adaptable to multi-terrain expansion
-  
+```bash
+python -m src.desert_segmentation.test
+```
 
 ---
 
-# Technical Architecture
+## Installation
 
-## Model Design
+Create virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux / Mac
+venv\Scripts\activate     # Windows
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+### Training
+
+```bash
+python -m src.desert_segmentation.train \
+    --epochs 30 \
+    --batch_size 8 \
+    --lr 1e-3
+```
+
+### Evaluation
+
+```bash
+python -m src.desert_segmentation.test
+```
+
+---
+
+## Demo UI
+
+A Streamlit-based interactive demo is included.
+
+Run locally:
+
+```bash
+pip install streamlit
+streamlit run apps/streamlit_app.py
+```
+
+### Demo Screenshots
+
+<img width="1600" src="https://github.com/user-attachments/assets/aaa7632d-2f8d-4fb6-8552-bcae6f381199" />
+<img width="1600" src="https://github.com/user-attachments/assets/837487c5-9bc9-4052-8a55-f75bb6a75c0d" />
+<img width="1600" src="https://github.com/user-attachments/assets/469a1222-aa99-4c62-a86a-7d407181e168" />
+<img width="1600" src="https://github.com/user-attachments/assets/a0aa3204-b1a6-4f1e-a6d5-5e092743deec" />
+
+Demonstrates real-time inference workflow and mask visualization.
+
+---
+
+## Technical Architecture
+
+### Model Design
 
 * Architecture: U-Net
 * Encoder: ResNet-18 (ImageNet pretrained)
@@ -63,36 +130,36 @@ This project investigates a synthetic-first approach to reduce labeling cost whi
 * Input Resolution: 256×256
 * Framework: PyTorch + segmentation_models_pytorch
 
-## Loss Strategy
+### Loss Strategy
 
 Hybrid Loss:
 
 * Weighted Cross Entropy (class imbalance mitigation)
 * Dice Loss (boundary stabilization)
 
-## Optimization Strategy
+### Optimization Strategy
 
 * Optimizer: Adam
 * Learning Rate: 1e-3
 * Scheduler: ReduceLROnPlateau
 * Epochs: 30
 
-## Inference Optimization
+### Inference Optimization
 
 * Test-Time Augmentation (Horizontal Flip Averaging)
 * +0.9% mIoU improvement without increasing model size
 
 ---
 
-# Performance Evaluation
+## Performance Evaluation
 
-| Metric          | Score               |
-| --------------- | ------------------- |
-| Validation mIoU | 0.5313              |
-| Final TTA mIoU  | **0.5402**          |
-| Convergence     | Stable at 30 epochs |
+| Metric          | Score      |
+| --------------- | ---------- |
+| Validation mIoU | 0.5313     |
+| Final TTA mIoU  | **0.5402** |
+| Convergence     | Stable     |
 
-## Experimental Observations
+### Observations
 
 * Strong spatial consistency in dominant terrain classes
 * Improved rare-class detection via hybrid loss
@@ -101,7 +168,7 @@ Hybrid Loss:
 
 ---
 
-# Dataset Strategy
+## Dataset Strategy
 
 The model was trained exclusively on the provided synthetic dataset with strict dataset separation.
 
@@ -112,121 +179,13 @@ The model was trained exclusively on the provided synthetic dataset with strict 
 * Controlled simulation environments
 * Faster experimentation cycles
 
-Strict separation between training and validation was maintained throughout.
+Strict separation between training and validation was maintained.
 
 ---
 
-# Market Landscape
+## Deployment & Scalability
 
-## Real-World Problem Impact
-
-Autonomous systems operating in desert and off-road environments face high annotation costs and unreliable perception due to low-structure terrain.
-
-Manual terrain annotation:
-- Is expensive
-- Is slow
-- Requires domain experts
-- Does not scale for rare terrain conditions
-
-Most segmentation systems are optimized for structured urban datasets and fail to generalize in unstructured environments.
-
-This project addresses that gap using a synthetic-first training strategy designed specifically for low-structure terrain conditions.
-
-
-## Target Industries
-
-* Autonomous mining systems
-* Defense unmanned ground vehicles (UGVs)
-* Agricultural robotics in arid regions
-* Construction automation
-* Digital twin simulation platforms
-* Remote terrain inspection systems
-
-These domains require perception systems optimized for unstructured terrain environments.
-
-
-## Economic Advantage
-
-By leveraging synthetic digital twin data, this approach reduces dependency on expensive real-world annotation workflows.
-
-This enables faster iteration cycles and scalable dataset generation for rare terrain scenarios that are difficult to capture in real environments.
-
----
-
-# Competitive Positioning
-
-While segmentation is a mature field, most solutions focus on structured urban datasets.
-
-### Differentiators
-
-* Focus on low-structure terrain environments
-* Synthetic-first training strategy
-* Rare-class optimization
-* Modular architecture
-* Deployment-ready UI prototype
-
-This system is positioned as a reusable perception module, not a single-purpose academic model.
-
-
-## Competitive Landscape Comparison
-
-| Feature | Urban Segmentation Models | This Project |
-|----------|--------------------------|--------------|
-| Structured terrain focus | Yes | No |
-| Low-structure terrain optimization | No | Yes |
-| Synthetic-first training | Rare | Yes |
-| Rare-class stabilization | Limited | Hybrid Loss |
-| Deployment-ready UI | Not standard | Included |
-
-This positions the system as a terrain-specialized segmentation backbone rather than a general-purpose academic model.
-
-
----
-
-# Business Model & Revenue Strategy
-
-## Primary Customers
-
-* Robotics manufacturers
-* Mining automation companies
-* Defense contractors
-* Simulation platform providers
-
-## Revenue Channels
-
-* B2B perception module licensing
-* Custom terrain adaptation services
-* Simulation-to-real transfer consulting
-* On-premise integration contracts
-
-## Market Expansion
-
-The architecture supports adaptation to:
-
-* Forest segmentation
-* Industrial monitoring
-* Agricultural mapping
-* Construction automation
-* Multi-terrain domain adaptation
-
-Expanding beyond desert-only use cases increases total addressable market.
-
-## Success Criteria
-
-This project evaluates success across multiple dimensions:
-
-- Quantitative Performance: mIoU and class-level stability
-- Deployment Feasibility: Lightweight architecture suitable for edge inference
-- Scalability: Adaptability across terrain types
-- Cost Efficiency: Reduced reliance on real-world annotation
-- Reproducibility: Modular training and evaluation pipeline
-
-
----
-
-# Scalability & Deployment
-
-## Deployment Options
+### Deployment Options
 
 * TorchScript export
 * ONNX export
@@ -234,7 +193,7 @@ This project evaluates success across multiple dimensions:
 * ROS integration
 * Streamlit demo interface
 
-## Scalability Mechanisms
+### Scalability Mechanisms
 
 * Backbone upgrades (ResNet-34, ResNet-50)
 * Multi-scale training
@@ -242,63 +201,11 @@ This project evaluates success across multiple dimensions:
 * Domain adaptation pipelines
 * Edge-device optimization
 
-The system is modular and production-oriented.
-
 ---
 
-# Risk Mitigation Strategy
+## Testing
 
-### Synthetic-to-Real Gap
-
-Mitigation methods:
-
-* Domain randomization
-* Limited real-world fine-tuning
-* TTA-based robustness improvement
-* Boundary-focused hybrid loss
-
-These approaches reduce sim-to-real execution risk.
-
----
-
-# Demo UI
-
-<img width="1600" src="https://github.com/user-attachments/assets/aaa7632d-2f8d-4fb6-8552-bcae6f381199" />
-
-<img width="1600" src="https://github.com/user-attachments/assets/837487c5-9bc9-4052-8a55-f75bb6a75c0d" />
-
-<img width="1600" src="https://github.com/user-attachments/assets/469a1222-aa99-4c62-a86a-7d407181e168" />
-
-<img width="1600" src="https://github.com/user-attachments/assets/a0aa3204-b1a6-4f1e-a6d5-5e092743deec" />
-
-Run locally:
-
-```bash
-pip install streamlit
-streamlit run apps/streamlit_app.py
-```
-
-Demonstrates real-time inference workflow and visualization.
-
----
-
-# Project Structure
-
-```
-Desert-Semantic-Segmentation/
-│
-├── apps/
-├── src/desert_segmentation/
-├── tests/
-├── docs/
-├── pyproject.toml
-├── setup.cfg
-└── README.md
-```
-
----
-
-# Testing
+Run unit tests:
 
 ```bash
 pytest tests/
@@ -312,27 +219,97 @@ Unit tests validate:
 
 ---
 
-# Future Work
+## Market Landscape
+
+### Real-World Problem
+
+Autonomous systems operating in unstructured desert environments face:
+
+* Sparse object boundaries
+* Texture similarity between terrain classes
+* Limited annotated datasets
+* Simulation-to-real domain shift
+
+Most segmentation systems are optimized for structured urban data and fail in low-structure terrain.
+
+This project addresses that gap using a synthetic-first training strategy.
+
+### Economic Advantage
+
+Leveraging synthetic digital twin data reduces:
+
+* Annotation cost
+* Data collection overhead
+* Rare-case data scarcity
+
+Enabling scalable terrain perception development.
+
+---
+
+## Competitive Positioning
+
+### Differentiators
+
+* Focus on low-structure terrain environments
+* Synthetic-first training strategy
+* Rare-class stabilization via hybrid loss
+* Modular architecture
+* Deployment-ready UI
+
+### Competitive Comparison
+
+| Feature                    | Urban Models | This Project |
+| -------------------------- | ------------ | ------------ |
+| Structured terrain focus   | Yes          | No           |
+| Low-structure optimization | No           | Yes          |
+| Synthetic-first pipeline   | Rare         | Yes          |
+| Rare-class stabilization   | Limited      | Hybrid       |
+| Deployment UI              | Not standard | Included     |
+
+---
+
+## Business Model
+
+### Primary Customers
+
+* Robotics manufacturers
+* Mining automation companies
+* Defense contractors
+* Simulation platform providers
+
+### Revenue Channels
+
+* B2B perception module licensing
+* Custom terrain adaptation services
+* Simulation-to-real consulting
+* On-premise integration contracts
+
+---
+
+## Risk Mitigation
+
+### Synthetic-to-Real Gap
+
+Mitigation methods:
+
+* Domain randomization
+* Limited real-world fine-tuning
+* Test-Time Augmentation
+* Boundary-focused hybrid loss
+
+---
+
+## Future Work
 
 * Multi-domain transfer learning
 * Cross-terrain evaluation benchmarks
-* Lightweight edge-optimized model
+* Edge-optimized model variants
 * Real-world dataset fine-tuning
 * Embedded device benchmarking
 
 ---
 
-## Expansion Strategy
-
-Phase 1: Desert terrain validation  
-Phase 2: Multi-terrain expansion  
-Phase 3: Edge-device benchmarking  
-Phase 4: Real-world fine-tuning  
-Phase 5: SDK integration for robotics
-
----
-
-# License
+## License
 
 MIT License
 
