@@ -264,6 +264,16 @@ Unit tests validate:
 
 ---
 
+## Development Roadmap
+
+Phase 1: Desert terrain validation  
+Phase 2: Multi-terrain expansion  
+Phase 3: Edge-device benchmarking  
+Phase 4: Real-world fine-tuning  
+Phase 5: SDK integration for robotics
+
+---
+
 # License
 
 MIT License
