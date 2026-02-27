@@ -301,7 +301,7 @@ Our synthetic-first pipeline dramatically lowers the cost barrier to building do
 
 ---
 
-## ⚔️ Competitive Positioning
+## Competitive Positioning
 
 ### How We Compare
 
@@ -380,8 +380,8 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 
 <div align="center">
 
-Made with ❤️ for autonomous systems in the wild.
+Made with love for autonomous systems in the wild.
 
-⭐ **If this project helped you, please give it a star!** ⭐
+**If this project helped you, please give it a star!**
 
 </div>
