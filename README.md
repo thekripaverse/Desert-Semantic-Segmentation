@@ -40,6 +40,17 @@ Models trained on structured urban datasets often fail under these conditions.
 
 This project investigates a synthetic-first approach to reduce labeling cost while preserving real-world robustness.
 
+
+---
+
+## Innovation Highlights
+
+- Synthetic-first training pipeline for low-structure terrain environments
+- Hybrid loss design for rare-class boundary stabilization
+- Test-Time Augmentation for inference robustness without increasing model size
+- Modular architecture adaptable to multi-terrain expansion
+  
+
 ---
 
 # Technical Architecture
@@ -107,6 +118,21 @@ Strict separation between training and validation was maintained throughout.
 
 # Market Landscape
 
+## Real-World Problem Impact
+
+Autonomous systems operating in desert and off-road environments face high annotation costs and unreliable perception due to low-structure terrain.
+
+Manual terrain annotation:
+- Is expensive
+- Is slow
+- Requires domain experts
+- Does not scale for rare terrain conditions
+
+Most segmentation systems are optimized for structured urban datasets and fail to generalize in unstructured environments.
+
+This project addresses that gap using a synthetic-first training strategy designed specifically for low-structure terrain conditions.
+
+
 ## Target Industries
 
 * Autonomous mining systems
@@ -117,6 +143,13 @@ Strict separation between training and validation was maintained throughout.
 * Remote terrain inspection systems
 
 These domains require perception systems optimized for unstructured terrain environments.
+
+
+## Economic Advantage
+
+By leveraging synthetic digital twin data, this approach reduces dependency on expensive real-world annotation workflows.
+
+This enables faster iteration cycles and scalable dataset generation for rare terrain scenarios that are difficult to capture in real environments.
 
 ---
 
@@ -133,6 +166,20 @@ While segmentation is a mature field, most solutions focus on structured urban d
 * Deployment-ready UI prototype
 
 This system is positioned as a reusable perception module, not a single-purpose academic model.
+
+
+## Competitive Landscape Comparison
+
+| Feature | Urban Segmentation Models | This Project |
+|----------|--------------------------|--------------|
+| Structured terrain focus | Yes | No |
+| Low-structure terrain optimization | No | Yes |
+| Synthetic-first training | Rare | Yes |
+| Rare-class stabilization | Limited | Hybrid Loss |
+| Deployment-ready UI | Not standard | Included |
+
+This positions the system as a terrain-specialized segmentation backbone rather than a general-purpose academic model.
+
 
 ---
 
@@ -163,6 +210,17 @@ The architecture supports adaptation to:
 * Multi-terrain domain adaptation
 
 Expanding beyond desert-only use cases increases total addressable market.
+
+## Success Criteria
+
+This project evaluates success across multiple dimensions:
+
+- Quantitative Performance: mIoU and class-level stability
+- Deployment Feasibility: Lightweight architecture suitable for edge inference
+- Scalability: Adaptability across terrain types
+- Cost Efficiency: Reduced reliance on real-world annotation
+- Reproducibility: Modular training and evaluation pipeline
+
 
 ---
 
@@ -264,7 +322,7 @@ Unit tests validate:
 
 ---
 
-## Development Roadmap
+## Expansion Strategy
 
 Phase 1: Desert terrain validation  
 Phase 2: Multi-terrain expansion  
