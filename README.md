@@ -269,8 +269,3 @@ Unit tests validate:
 MIT License
 
 ---
-* A version optimized for investors
-* A shorter but ultra-impactful version
-* Or a GitHub-star-optimized version
-
-Tell me which mode.
