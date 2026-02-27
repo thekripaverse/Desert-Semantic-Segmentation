@@ -1,13 +1,17 @@
 [build-system]
 requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+build-backend = "setuptools.backends.legacy:build"
 
 [project]
-name = "desert-segmentation"
+name = "desert-semantic-segmentation"
 version = "0.1.0"
-description = "Terrain-aware semantic segmentation using synthetic data"
-authors = [{name="Kripa"}]
+description = "Terrain-aware semantic segmentation for desert environments"
 requires-python = ">=3.9"
 
-[tool.setuptools]
-package-dir = {"" = "src"}
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true
